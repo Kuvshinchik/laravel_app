@@ -1,0 +1,4 @@
+RewriteEngine On
+RewriteRule (.*) public/$1
+php_flag register_globals on
+php_flag register_argc_argv on
