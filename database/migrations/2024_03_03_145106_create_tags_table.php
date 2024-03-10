@@ -30,5 +30,6 @@ return new class extends Migration
         Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('tags');
         Schema::enableForeignKeyConstraints();
+
     }
 };

@@ -16,3 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/show', function () {
+    return 11111;
+});
+
+/*
+Route::get('/snow', function () {
+    return 22222;
+});*/
