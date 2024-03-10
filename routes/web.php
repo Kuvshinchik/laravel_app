@@ -20,7 +20,7 @@ Route::get('/show', function () {
     return 11111;
 });
 
-/*
+
 Route::get('/snow', function () {
     return 22222;
-});*/
+});
