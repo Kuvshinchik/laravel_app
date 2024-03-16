@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-/**/git
+/**/
 Route::get('/show', function () {
     return 11111;
 });
