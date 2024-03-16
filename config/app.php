@@ -69,8 +69,8 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
-
+    //'timezone' => 'UTC',
+    'timezone' => 'UTC+3',
     /*
     |--------------------------------------------------------------------------
     | Application Locale Configuration
@@ -82,8 +82,8 @@ return [
     |
     */
 
-    'locale' => 'en',
-
+    //'locale' => 'en',
+    'locale' => 'ru',
     /*
     |--------------------------------------------------------------------------
     | Application Fallback Locale
