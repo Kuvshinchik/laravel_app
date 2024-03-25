@@ -5,19 +5,20 @@ namespace Database\Factories;
 use App\Models\Comment;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-/**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Comment>
- */
 class CommentFactory extends Factory
 {
     /**
-     * Define the model's default state.
+     * The name of the factory's corresponding model.
      *
      * @var string
-     *
-     * @return array<string, mixed>
      */
     protected $model = Comment::class;
+
+    /**
+     * Define the model's default state.
+     *
+     * @return array
+     */
     public function definition()
     {
         return [

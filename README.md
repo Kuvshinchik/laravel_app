@@ -1,1 +1,2 @@
-laravel_app
+laravel-app
+laravel-app

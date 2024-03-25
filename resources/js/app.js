@@ -1,39 +1,29 @@
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
+window._ = require('lodash');
+window.axios = require('axios');
+window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
-import './bootstrap';
-import { createApp } from 'vue';
 
-/**
- * Next, we will create a fresh Vue application instance. You may then begin
- * registering components with the application instance so they are ready
- * to use in your application's views. An example is included for you.
- */
+window.Vue = require('vue').default;
 
-const app = createApp({});
+import store from './store'
 
-import ExampleComponent from './components/ExampleComponent.vue';
-app.component('example-component', ExampleComponent);
+// Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('article-component', require('./components/ArticleComponent.vue').default);
+Vue.component('views-component', require('./components/ViewsComponent.vue').default);
+Vue.component('likes-component', require('./components/LikesComponent.vue').default);
+Vue.component('comments-component', require('./components/CommentsComponent.vue').default);
 
-/**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
- *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
- */
+const app = new Vue({
+    store,
+    el: '#app',
+    created() {
+        let url = window.location.pathname
+        let slug = url.substring(url.lastIndexOf('/')+1)
 
-// Object.entries(import.meta.glob('./**/*.vue', { eager: true })).forEach(([path, definition]) => {
-//     app.component(path.split('/').pop().replace(/\.\w+$/, ''), definition.default);
-// });
-
-/**
- * Finally, we will attach the application instance to a HTML element with
- * an "id" attribute of "app". This element is included with the "auth"
- * scaffolding. Otherwise, you will need to add an element yourself.
- */
-
-app.mount('#app');
+        console.log(url)
+        console.log(slug)
+        this.$store.commit('SET_SLUG',slug )
+        this.$store.dispatch('article/getArticleData', slug)
+        this.$store.dispatch('article/viewsIncrement', slug)
+    }
+});

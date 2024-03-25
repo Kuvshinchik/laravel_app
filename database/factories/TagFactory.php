@@ -5,23 +5,24 @@ namespace Database\Factories;
 use App\Models\Tag;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-/**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Tag>
- */
 class TagFactory extends Factory
 {
     /**
-     * Define the model's default state.
+     * The name of the factory's corresponding model.
      *
      * @var string
-     *
-     * @return array<string, mixed>
      */
     protected $model = Tag::class;
+
+    /**
+     * Define the model's default state.
+     *
+     * @return array
+     */
     public function definition()
     {
         return [
-            'label' => $this->faker->word,
+           'label' => $this->faker->word,
         ];
     }
 }
